@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# Advanced Find & Replace Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This tool provides advanced find and replace functionality, supports HTML-type text, and as well as undo changes.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get started, clone this repository and open the project in your preferred code editor.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone <repository-url>
+cd <project-directory>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Run the command below to install all dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+Use the next command to launch the project
+
+```bash
+npm run dev
+```
+
+Open http://localhost:3000 to view it in the browser.
+
+## Features
+
+### 1. **Find Text**
+- Input field to enter the text or string to search within the content.
+
+### 2. **Replace Once**
+- Button to replace only the first occurrence of the found text with new input text.
+
+### 3. **Replace All**
+- Button to replace all occurrences of the found text with the new text.
+- Option to preview all replacements before applying.
+
+### 4. **Undo Changes**
+- Undo button to revert the last find/replace action.
+- Ability to step backward through multiple changes.
+
+### 5. **Support HTML-type Text**
+- Parse and manipulate raw HTML content safely (e.g., handling `<div>`, `<p>`, etc.).
+- Replace text inside HTML tags without affecting tag structure.
+- Ensure that tag attributes (e.g., `href`, `src`) are not accidentally altered during replacement.
+
+### 6. **Visual Feedback**
+- Highlight the found text within the HTML structure before performing the replace.
+
+### 7. **Customizable Search Settings**
+- Case-sensitive/insensitive search.
+
+
+![image](https://github.com/user-attachments/assets/e781791f-7a11-44ea-9fa2-12a793a73559)
+![image](https://github.com/user-attachments/assets/b29095c8-88c4-4819-8649-4b8d711f45ee)
+![image](https://github.com/user-attachments/assets/9d42a67a-3dcd-4781-b318-461ff2cd67ee)
+
+
+
